@@ -77,41 +77,71 @@
                 }
             }
         },
-        "/specifications":{
-            "post":{
-                "tags":["specifications"],
-                "summary":"Create a specification",
-                "description":"Create a new specification",
-                "requestBody":{
-                    "content":{
-                        "application/json":{
-                            "schema":{
-                                "$ref":"#/definitions/specification"
+        "/categories/import": {
+            "post": {
+                "tags": [
+                    "category"
+                ],
+                "summary": "Upload a category with document import",
+                "description": "Upload a category with document import",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
                             }
                         }
                     }
                 },
-                "reponses":{
-                    "201":{
-                        "description":"Created"
+                "reponses": {
+                    "201": {
+                        "description": "Created"
+                    }
+                }
+            }
+        },
+        "/specifications": {
+            "post": {
+                "tags": [
+                    "specifications"
+                ],
+                "summary": "Create a specification",
+                "description": "Create a new specification",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/specification"
+                            }
+                        }
+                    }
+                },
+                "reponses": {
+                    "201": {
+                        "description": "Created"
                     },
-                    "500":{
-                        "description":"Specification already exists"
+                    "500": {
+                        "description": "Specification already exists"
                     }
                 }
             }
         }
-        
     },
-    "definitions":{
-        "specifications":{
-            "type":"object",
-            "properties":{
-                "name":{
-                    "type":"string"
+    "definitions": {
+        "specifications": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
                 },
-                "description":{
-                    "type":"string"
+                "description": {
+                    "type": "string"
                 }
             }
         }
