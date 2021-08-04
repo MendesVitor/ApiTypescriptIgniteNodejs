@@ -1,20 +1,30 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\vitor\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add class-transformer
+  /home/vitor/.nvm/versions/node/v14.17.3/bin/node /home/vitor/.nvm/versions/node/v14.17.3/bin/yarn add @babel/cli @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/preset-env-babel-plugin-module-resolver babel-plugin-transform-typescript-metadata -D
 
 PATH: 
-  C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python39\Scripts\;C:\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Users\vitor\AppData\Local\TRIGGERcmdAgent\app-1.0.23;C:\Program Files\Git\cmd;C:\Program Files\PuTTY\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\vitor\AppData\Local\Microsoft\WindowsApps;C:\Users\vitor\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\vitor\AppData\Roaming\npm;C:\Program Files\Azure Data Studio\bin;C:\Users\vitor\.dotnet\tools;C:\flutter\bin;
+  /home/vitor/.vscode-server/bin/c3f126316369cd610563c75b1b1725e0679adfb3/bin:/home/vitor/.nvm/versions/node/v14.17.3/bin:/home/vitor/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/c/Program Files/Common Files/Oracle/Java/javapath:/c/Python39/Scripts/:/c/Python39/:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0/:/c/Windows/System32/OpenSSH/:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/Users/vitor/AppData/Local/TRIGGERcmdAgent/app-1.0.23:/c/Program Files/Git/cmd:/c/Program Files/PuTTY/:/c/ProgramData/chocolatey/bin:/c/Program Files/dotnet/:/c/Program Files/Docker/Docker/resources/bin:/c/ProgramData/DockerDesktop/version-bin:/c/Users/vitor/AppData/Local/Microsoft/WindowsApps:/c/Users/vitor/AppData/Local/Programs/Microsoft VS Code/bin:/c/Program Files/Azure Data Studio/bin:/c/Users/vitor/.dotnet/tools:/c/flutter/bin:/c/Program Files/JetBrains/GoLand 2021.1.3/bin
 
 Yarn version: 
   1.22.10
 
 Node version: 
-  14.15.4
+  14.17.3
 
 Platform: 
-  win32 x64
+  linux x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\vitor\Documents\Estudo TI\Node\ApiTypescriptIgniteNodejs\node_modules\.bin\ts-node-dev'
+  Error: https://registry.yarnpkg.com/@babel%2fpreset-env-babel-plugin-module-resolver: Not found
+      at Request.params.callback [as _callback] (/home/vitor/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:66988:18)
+      at Request.self.callback (/home/vitor/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:140662:22)
+      at Request.emit (events.js:375:28)
+      at Request.<anonymous> (/home/vitor/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:141634:10)
+      at Request.emit (events.js:375:28)
+      at IncomingMessage.<anonymous> (/home/vitor/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:141556:12)
+      at Object.onceWrapper (events.js:481:28)
+      at IncomingMessage.emit (events.js:387:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -23,6 +33,7 @@ npm manifest:
       "main": "index.js",
       "license": "MIT",
       "scripts": {
+          "build":"tsc",
           "dev": "ts-node-dev -r tsconfig-paths/register --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
           "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
           "test": "SET NODE_ENV=test&&jest --runInBand --detectOpenHandles",
@@ -58,6 +69,7 @@ npm manifest:
           "@types/swagger-ui-express": "^4.1.2",
           "aws-sdk": "^2.944.0",
           "bcryptjs": "^2.4.3",
+          "class-transformer": "^0.4.0",
           "csv-parse": "^4.15.4",
           "dayjs": "^1.10.5",
           "dotenv": "^10.0.0",
@@ -1490,6 +1502,11 @@ Lockfile:
     version "1.2.1"
     resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.1.tgz#2fd46d9906a126965aa541345c499aaa18e8cd73"
     integrity sha512-jVamGdJPDeuQilKhvVn1h3knuMOZzr8QDnpk+M9aMlCaMkTDd6fBWPhiDqFvFZ07pL0liqabAiuy8SY4jGHeaw==
+  
+  class-transformer@^0.4.0:
+    version "0.4.0"
+    resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.4.0.tgz#b52144117b423c516afb44cc1c76dbad31c2165b"
+    integrity sha512-ETWD/H2TbWbKEi7m9N4Km5+cw1hNcqJSxlSYhsLsNjQzWWiZIYA1zafxpK9PwVfaZ6AqR5rrjPVUBGESm5tQUA==
   
   cli-highlight@^2.1.10:
     version "2.1.11"
