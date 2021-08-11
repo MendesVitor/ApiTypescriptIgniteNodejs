@@ -9,7 +9,7 @@
         "./dist/shared/infra/typeorm/migrations/*.js"
     ],
     "entities": [
-        "./dis/modules/**/entities/*.js"
+        "./dist/modules/**/entities/*.js"
     ],
     "cli": {
         "migrationsDir": "./dist/shared/infra/typeorm/migrations"
